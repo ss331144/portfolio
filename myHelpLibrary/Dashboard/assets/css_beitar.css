@@ -1,0 +1,159 @@
+/* הגדרות כלליות */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    color: #f5f5f5;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+    background-image: url('https://yt3.googleusercontent.com/EGqkuom4VgT0h_yT_11RTEaaV_kdba9YcpmfZ3uyDogKsbbMxQB1KYrl_e_LCNCgZdfIKXQHL2w=s900-c-k-c0x00ffffff-no-rj'); /* ← הכנס כאן את הקישור לתמונה */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: brightness(0.4);
+}
+
+/* שכבת חצי שקיפות מעל הרקע */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* מיכל ראשי */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(20, 20, 20, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); /* צהוב זהוב */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+    transform: translateY(-5px);
+}
+
+/* כותרות */
+h1, h2, h3, h4, h5 {
+    color: #ffeb3b; /* צהוב בהיר */
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+}
+
+/* כפתור */
+button {
+    background-color: #ffcc00; /* צהוב בית"ר */
+    color: #000000;
+    font-size: 18px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ffd700;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* קלטים */
+.form-control {
+    background-color: #2b2b2b;
+    color: #000000;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #888;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #0d0d0d; /* שחור מעט בהיר יותר בעת פוקוס */
+    border: 1px solid #ffcc00; /* הדגשת הגבול בפוקוס */
+}
+
+/* טקסט זוהר */
+.glow-text {
+    text-shadow: 0 0 12px rgba(255, 235, 59, 0.8), 0 0 25px rgba(255, 235, 59, 0.6), 0 0 35px rgba(255, 235, 59, 0.4);
+}
+
+/* אנימציה של כניסה מימין */
+@keyframes slideRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-right {
+    animation: slideRight 1s ease-out forwards;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    button, .form-control {
+        font-size: 14px;
+    }
+}
+
+/* קופסה עם גבול זוהר */
+.glowing-box {
+    border: 2px solid #ffcc00;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.glowing-box:hover {
+    box-shadow: 0 0 30px rgba(255, 235, 59, 0.6);
+}
+
+/* אייקון פעימה */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.pulse-icon {
+    animation: pulse 1.5s infinite;
+    display: inline-block;
+    margin: 10px auto;
+    font-size: 30px;
+    color: #ffcc00;
+}
+
+
+
+
+

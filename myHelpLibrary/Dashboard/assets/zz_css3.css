@@ -1,0 +1,116 @@
+/* הגדרות כלליות */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #2a2a2a 0%, #121212 100%);
+    color: #f1f1f1;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* רקע מרכזי */
+.container {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 165, 0, 0.5);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 0 35px rgba(255, 165, 0, 0.8);
+    transform: translateY(-5px);
+}
+
+/* כותרות */
+h1, h2, h3, h4, h5 {
+    color: #ff6600;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* כפתור */
+button {
+    background-color: #ff5c00;
+    color: #f1f1f1;
+    font-size: 18px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #e64a19;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* קלטים וטפסים */
+.form-control {
+    background-color: #2c2c2c;
+    color: #f1f1f1;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #444444;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #333333;
+    border: 1px solid #ff6600;
+}
+
+/* אנימציית אייקון */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse-icon {
+    animation: pulse 1.2s infinite;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    button, .form-control {
+        font-size: 14px;
+    }
+}
+
+/* טקסט זוהר */
+.glow-text {
+    text-shadow: 0 0 12px rgba(255, 105, 0, 0.8), 0 0 25px rgba(255, 140, 0, 0.6), 0 0 35px rgba(255, 170, 0, 0.4);
+}
+
+/* אפקט hover לדיבים */
+.box-shadow-hover {
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.box-shadow-hover:hover {
+    box-shadow: 0px 4px 20px rgba(255, 140, 0, 0.6);
+}

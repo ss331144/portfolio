@@ -1,0 +1,119 @@
+/* הגדרות כלליות */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden; /* מונע גלילה אופקית */
+}
+
+/* הגדרת הרקע והצבעים */
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease; /* טרנזיציה ליצירת שינוי יפה בעת אינטראקציה */
+}
+
+.container:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7); /* שינוי הצללה בעת hover */
+}
+
+
+/* כותרות */
+h1, h2, h3, h4, h5 {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase; /* הופך את הטקסט לאותיות גדולות */
+    letter-spacing: 2px; /* מרווח בין האותיות */
+}
+
+/* כפתור שלח */
+/* הסטייל לכפתור */
+button {
+    background-color: #2575fc;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 20px; /* אתה יכול להסיר אם לא צריך רווח למעלה */
+}
+
+button:hover {
+    background-color: #6a11cb;
+    transform: translateY(-3px); /* תזוזה קלה למעלה בעת hover */
+}
+
+button:active {
+    transform: translateY(1px); /* תזוזה בעת לחיצה */
+}
+
+/* Dropdown */
+.form-control {
+    background-color: #ffffff;
+    color: #333333;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease, border 0.3s ease; /* טרנזיציה לשינוי צבע רקע וגבולות */
+}
+
+.form-control:focus {
+    background-color: #e0e0e0;
+    border: 1px solid #2575fc; /* שינוי גבול בעת פוקוס */
+}
+
+/* אנימציה לאייקונים */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse-icon {
+    animation: pulse 1s infinite;
+}
+
+/* שולחן עבודה (media query) */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+}
+/* מוסיף טקסט עם אשליית זוהר */
+.glow-text {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+}
+/* הוספת אפקטים לדיבים */
+.box-shadow-hover {
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.box-shadow-hover:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* צללית נוספת */
+}
