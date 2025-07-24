@@ -17,6 +17,57 @@
 ##
 ### Show the graph
 ##plt.show()
+
+"""
+Polynomial Curve Fitting and Plotting from User Input
+
+@description:
+    This script prompts the user to enter a number of (x, y) data points.
+    It then fits a 4th-degree polynomial curve to the points using NumPy's polyfit,
+    and visualizes both the original points and the smooth fitted curve using Matplotlib.
+
+Libraries:
+    - numpy
+    - matplotlib.pyplot
+    - math (not used, can be removed)
+
+Functionality:
+    - Prompts the user to enter how many points to input.
+    - Accepts '000' as a signal to stop early.
+    - Automatically assigns x-values as sequential integers starting from -N (based on number of inputs).
+    - Fits a 4th-degree polynomial curve to the input points.
+    - Displays the result as a graph with:
+        - Blue dots for user-entered points
+        - Red curve for the fitted polynomial
+        - Labeled axes and legend
+
+Instructions:
+    - Run the script
+    - Input the number of points you'd like to enter
+    - Provide only y-values (x-values are auto-generated: -N to 0)
+
+Notes:
+    - `x=mon` line sets x values automatically from negative range to 0.
+    - If you want to manually enter x-values too, comment out `x = mon` and uncomment the input line.
+
+Potential Improvements:
+    - Allow full manual (x, y) input
+    - Let user choose the polynomial degree
+    - Export the fitted function
+    - Save the plot as an image
+
+Example Input:
+    How point do you have? 3
+    Enter y value for point 1: 1
+    Enter y value for point 2: 4
+    Enter y value for point 3: 9
+
+Output:
+    A graph with 3 points and a polynomial curve passing through/near them
+
+"""
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 import math
