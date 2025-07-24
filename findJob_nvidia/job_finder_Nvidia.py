@@ -1,3 +1,48 @@
+
+"""
+Web Scraper for NVIDIA Job Listings using Selenium and BeautifulSoup
+
+@author: Sahar
+@description: This script scrapes job listings from NVIDIA's career site, translates titles to Hebrew,
+filters for relevant experience, and stores the results in a CSV file without duplications.
+It also logs timing and status to the console using colored output.
+
+Dependencies:
+    - selenium
+    - beautifulsoup4
+    - webdriver-manager
+    - colorama
+    - pandas
+    - deep-translator
+    - requests
+
+Main Features:
+    - Automatically installs and launches ChromeDriver in headless mode.
+    - Searches for multiple job keywords (e.g., "intern", "data", "python").
+    - Parses job listings and filters useful job details.
+    - Translates job titles into Hebrew using GoogleTranslator.
+    - Stores jobs in a CSV file, avoiding duplicates.
+    - Highlights new entries and elapsed time per job search.
+    - Automatically opens the final CSV file after execution.
+
+Key Functions:
+    - `scrape_nvidia_jobs_selenium(url)`: Uses Selenium to fetch job listings HTML and extracts job info.
+    - `save_jobs_to_csv_no_duplicates(...)`: Appends new job listings to CSV only if they're not already stored.
+    - `filter_li_by_experience(...)`: (unused currently) Filters job descriptions by relevant experience keywords.
+    - `get_data_dicts(...)`: Maps search keywords to terminal colors for better visual feedback.
+
+Usage:
+    - Configure `main_job_title` list to search for relevant positions.
+    - The script handles timing, translation, and CSV output automatically.
+    - Optional: Set `DEL_FILE = True` to delete the previous CSV before starting.
+
+Notes:
+    - Requires Google Chrome to be installed.
+    - Assumes internet access and no CAPTCHA on the job site.
+    - Optimized for the structure of NVIDIA's Workday job b
+
+
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
