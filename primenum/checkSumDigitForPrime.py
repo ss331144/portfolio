@@ -1,3 +1,40 @@
+
+'''
+Program to check for "special prime-related numbers" within a given range based on custom criteria.
+
+Main Functions:
+
+- calcPrime(n):
+    Checks if the number n is prime.
+    Uses an efficient algorithm that tests divisibility up to the square root of n.
+
+- sumSqureNum(num):
+    Calculates the sum of the digits of num squared, adds 1, and checks if the result is prime.
+    Returns True if prime, else False.
+
+- mulTwoAddOne(num):
+    Checks if (num * 2 + 1) is prime, or if the sum of its digits is prime.
+
+- mulTwoSubOne(num):
+    Checks if (num * 2 - 1) is prime, or if the sum of its digits is prime.
+
+- main(startNum, Lastnum):
+    Runs the checks for every number in the range from startNum up to Lastnum.
+    Prints results and statistics about numbers that pass or fail the criteria.
+
+Usage:
+
+- Identifies numbers that satisfy custom prime-based properties derived from mathematical expressions.
+
+Notes:
+
+- The main function can be extended to include additional checks (like mulTwoAddOne and mulTwoSubOne).
+- Uses numpy for digit sum calculations but can be replaced with simpler built-in functions.
+- Runtime depends on the size of the input range.
+
+'''
+
+
 import numpy
 import pyautogui
 import keyboard
