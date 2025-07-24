@@ -1,3 +1,30 @@
+"""
+Dash Application for Microsoft Security Severity Prediction using CatBoost
+
+This script builds a web dashboard using Dash framework to allow users to input feature values
+and receive predictions from a pretrained CatBoostClassifier model regarding Microsoft security event severity.
+
+Main functionalities:
+- Load dataset and pretrained CatBoost model.
+- Generate dropdown menus for each model feature with unique values from the dataset.
+- Accept user inputs via dropdowns and trigger model prediction on submitted values.
+- Display prediction results dynamically on the web interface.
+
+Key Components:
+- run_dashboard: Sets up Dash layout and components.
+- update_output: Callback function to process user inputs and show model prediction.
+- runApp: Initializes global model, prepares dropdown options, and runs the Dash server.
+
+Requirements:
+- pandas, numpy, catboost, dash, matplotlib (optional for plots)
+- Pretrained CatBoost model file (.cbm)
+
+Usage:
+Run this script and open the displayed local URL in a browser to interact with the prediction dashboard.
+"""
+
+
+
 
 import os
 from catboost import CatBoostClassifier
