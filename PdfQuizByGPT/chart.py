@@ -1,3 +1,49 @@
+'''
+This script generates a right-to-left aligned PDF quiz in Hebrew (or RTL-compatible languages),
+based on structured multiple-choice questions and answers written in plain text.
+
+Core Features:
+--------------
+1. Automatically detects numbered questions (e.g., "1. Question") and transforms them into
+   a structured format using `parse_questions()`.
+
+2. Adds a pipe character ('|') after each question number using `add_pipe_after_number()`
+   for consistent formatting and splitting.
+
+3. Uses the ReportLab library to:
+   - Generate a PDF file (A4 size) with RTL text alignment.
+   - Support custom Hebrew fonts (e.g., Arial.ttf).
+   - Automatically wrap long quizzes across multiple pages.
+   - Align all text rightward using `bidi` and `arabic_reshaper` for proper Hebrew/Arabic layout.
+
+Main Functions:
+---------------
+- reshape_rtl(text): Reshapes and reorders RTL strings for proper PDF display.
+- parse_questions(text): Parses plain text into a list of questions and answers.
+- add_pipe_after_number(text): Ensures formatting consistency for question numbering.
+- create_pdf_from_questions(questions, filename): Renders all questions/answers into a clean PDF.
+
+Dependencies:
+-------------
+- reportlab
+- bidi
+- arabic_reshaper
+
+Font Requirement:
+-----------------
+Make sure you have 'Arial.ttf' (or another Hebrew-supported font) in your working directory.
+You may replace `'Arial.ttf'` with another suitable font file if needed.
+
+Output:
+-------
+Generates a well-formatted PDF quiz (default: "quiz.pdf" or a custom title), for example:
+✔ PDF נוצר בהצלחה: quiz - History, Science, and Beverages.pdf
+
+@author: Sahar
+'''
+
+
+
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase import pdfmetrics
