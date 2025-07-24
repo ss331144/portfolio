@@ -1,3 +1,62 @@
+"""
+MySQL Database Utilities with SQLAlchemy and Pandas
+
+This module provides helper functions to manage MySQL databases and tables,
+including reading Excel files into tables, managing primary keys, deleting rows by primary key,
+and retrieving metadata and data from tables.
+
+Functions:
+
+- get_engine(schema_name, user, password, host, port):
+    Returns a SQLAlchemy engine connected to the specified MySQL schema.
+
+- save_excel_to_mysql(path, table_name, schema_name, user, password):
+    Loads an Excel file or DataFrame into a MySQL table.
+    Creates the database schema if it doesn't exist.
+    Replaces the table if it already exists.
+
+- get_preimr_code_by_table_name(table_name, schema_name, user, password, printing):
+    Retrieves column names and primary key columns of a specified table.
+
+- drop_col_by_primery(table_name, primery_kay, schema_name, printing, user, password):
+    Deletes a row from the table identified by the primary key dictionary.
+
+- set_pk(table_name, schema_name, pk_name, user, password):
+    Adds a new AUTO_INCREMENT primary key column to a table if none exists.
+
+- get_col_info(table_name, col_name, schema_name, user, password):
+    Retrieves column-level statistics such as data type, null count, unique values, and basic numeric stats.
+
+- get_row_info(table_name, id_value, id_column, schema_name):
+    Retrieves a row from a table by primary key value.
+
+- is_exist_schema(schema_name, user, password):
+    Checks if a database schema exists on the MySQL server.
+
+- is_exist_table(schema_name, table_name):
+    Checks if a table exists within a given schema.
+
+- add_row_by_pk(schema_name, table_name, pk_columns, column_add):
+    Inserts a new row into a table if a row with the same primary key does not already exist.
+
+- clean_column_name(col_name):
+    Cleans column names by replacing spaces with underscores and dots with 'POINT'.
+
+- get_col_types(table_name, schema_name):
+    Returns a dictionary with column names as keys and their MySQL types as values.
+
+Usage:
+- Typical usage involves creating the engine, loading Excel data, managing primary keys,
+  and querying or modifying table data programmatically.
+
+Dependencies:
+- pandas
+- sqlalchemy
+- pymysql
+- pyautogui (imported but not used in code snippet)
+"""
+
+
 import pandas as pd
 from sqlalchemy import create_engine, text , inspect
 
