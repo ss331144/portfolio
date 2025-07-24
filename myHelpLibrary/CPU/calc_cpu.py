@@ -1,3 +1,31 @@
+
+"""
+CPU Monitoring and Temperature Utilities for macOS
+
+This module provides a set of functions to monitor and retrieve CPU-related metrics on macOS systems.
+It includes capabilities to:
+- Read CPU temperature via external tools (osx-cpu-temp, powermetrics)
+- Monitor CPU usage per core over time with live printouts and graphical visualization
+- Detect CPU core counts (physical and logical)
+- Check if the system is running Apple Silicon (arm64 architecture)
+- Read fan speed using 'istats'
+- Parse CPU status from the 'top' command output and convert it into a pandas DataFrame
+- Continuously monitor CPU temperature until it cools below a given threshold
+
+The module leverages external command line tools (osx-cpu-temp, powermetrics, istats) and Python packages
+(psutil, pandas, matplotlib, seaborn) to provide both textual and graphical insights about CPU performance and health.
+
+Usage example:
+    python cpu_monitoring.py
+
+Requirements:
+- macOS system
+- External tools installed: osx-cpu-temp, istats, powermetrics (requires sudo)
+- Python packages: psutil, pandas, matplotlib, seaborn
+"""
+
+
+
 import os
 import psutil
 import subprocess
