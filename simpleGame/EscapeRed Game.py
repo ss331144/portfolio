@@ -1,3 +1,57 @@
+'''
+RedEscape Game
+
+Description:
+-------------
+This is a simple Python game built using Tkinter, where the player controls a red circular character
+on the screen. The goal is to navigate the character from the starting position to the green "king" 
+circle while avoiding black enemy circles scattered randomly on the screen.
+
+Gameplay:
+-------------
+- The player moves the red character using the arrow keys (up, down, left, right).
+- Enemies are randomly generated black circles that periodically respawn.
+- If the character collides with any enemy, the game ends with a "You Lose" screen.
+- Reaching the green "king" circle triggers a win screen showing the time taken to complete the game.
+- The game saves the best time record in a file and displays it.
+
+Main Components:
+-----------------
+- Tkinter Canvas for rendering the game elements (character, enemies, goal).
+- Keyboard input detection using the 'keyboard' module.
+- Random enemy placement and respawning every few seconds.
+- Collision detection between player and enemies or player and goal.
+- Timer tracking total game duration.
+
+Functions:
+------------
+- start(): Initializes the game elements, removes the welcome screen, and starts the movement loop.
+- move(): Detects keyboard input and moves the character accordingly, checks collisions.
+- createEnemy(): Creates enemy circles at random positions on the canvas.
+- CheakEnemyOn(CoordsEnemys): Checks if the character overlaps with any enemy, triggers loss if so.
+- LoseThrome(): Handles game loss by showing a message and disabling the character.
+- winGame(): Checks if the character reached the goal and displays win message with elapsed time.
+- gameRull(): Shows the game rules in a popup window.
+- destroyGame(): Destroys the main game window.
+- saveRecord(value): Saves the best game time record in a file and shows the previous record.
+
+Usage:
+---------
+Run this script. On the welcome screen, click "Start game" to begin. Use arrow keys to move the red 
+circle. Avoid black enemies and reach the green circle to win.
+
+Dependencies:
+--------------
+- Python standard library modules: tkinter, random, datetime
+- External modules: keyboard, pyautogui, screeninfo
+
+Note:
+-------
+This game requires administrative privileges on some systems for the 'keyboard' module to detect key presses.
+
+'''
+
+
 #game
 import keyboard
 import tkinter
