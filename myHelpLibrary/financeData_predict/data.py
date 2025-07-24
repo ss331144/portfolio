@@ -1,3 +1,34 @@
+"""
+LSTM Time Series Forecasting for Global Financial Indices
+
+This script fetches historical price data for major global stock indices using yfinance,
+then trains and applies an LSTM neural network to predict future monthly closing prices.
+
+Main functionalities:
+- Download historical data for indices like S&P 500, NASDAQ, Dow Jones, FTSE 100, Nikkei, and others.
+- Prepare the data by resampling to monthly frequency and scaling values.
+- Create lagged datasets for supervised learning suitable for LSTM input.
+- Define and train an LSTM model to forecast future closing prices.
+- Predict future prices for a specified horizon (default 120 months).
+- Plot actual historical and predicted future prices, saving plots as PNG files.
+
+Key functions:
+- get_finance_data: Returns a dictionary of yfinance Ticker objects and their names.
+- create_dataset: Prepares input/output arrays with lagged observations.
+- build_lstm_model: Defines and compiles the LSTM model architecture.
+- run_lstm_time_series_prediction: Runs the full training, prediction, and plotting pipeline for each index.
+- main: Fetches data for all indices, runs predictions sequentially, handling errors and throttling requests.
+
+Dependencies:
+- yfinance, numpy, pandas, matplotlib, scikit-learn, tensorflow (keras)
+
+Usage:
+Run the script to automatically download data, train models, generate forecasts,
+and save the plots to the 'Predict Finance' directory.
+"""
+
+
+
 import yfinance as yf
 import os
 import numpy as np
