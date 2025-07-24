@@ -1,3 +1,57 @@
+"""
+Machine Learning Pipeline for Classification with Missing Data Handling and Model Evaluation
+
+This script provides functions to preprocess data, handle missing categorical values,
+train decision tree models for imputation and classification,
+and run multiple classifiers with evaluation and visualization.
+
+Key functionalities:
+
+1. fill_missing_categorical_values(df, strategy='most_frequent'):
+   - Fills missing values in categorical columns using SimpleImputer.
+   - Supports different strategies (default: most frequent value).
+
+2. split_by_target_null(df, target):
+   - Splits the DataFrame into two subsets: rows where the target is null and where it is not.
+   - Enables separate handling of missing target values.
+
+3. tree_model(df, df_null_target, target, name_fig):
+   - Trains a decision tree classifier on the complete cases.
+   - Predicts missing target values in the subset with null targets.
+   - Displays and saves the decision tree visualization.
+   - Returns the trained model, accuracy, and the DataFrame with predicted target values.
+
+4. train_decision_tree_filled_data(df, target, new_data_for_predict):
+   - Trains a decision tree classifier on the full dataset without missing values.
+   - Evaluates accuracy, F1 score, and precision.
+   - Visualizes and saves the decision tree.
+   - Predicts the target for new input data.
+   - Returns the trained model, accuracy, confusion matrix, predictions DataFrame, and a dictionary of model accuracies.
+
+5. convert_to_datetime(df, column_name, separator='-'):
+   - Converts a date column (string) to separate numeric Year, Month, and Day columns.
+   - Automatically detects common date separators and handles conversion errors.
+
+6. run_models_and_plot(df, target):
+   - Encodes categorical features numerically.
+   - Splits data into training and testing sets.
+   - Trains and evaluates three classifiers: Random Forest, SVM, and Gradient Boosting.
+   - Computes accuracy, F1 score, precision, and confusion matrices.
+   - Visualizes confusion matrices and saves them.
+   - Plots example decision trees from Random Forest.
+   - Shows SVM decision boundaries for the first two features.
+   - Saves all plots in the 'graphs' directory.
+
+General notes:
+- Uses sklearn for modeling and metrics.
+- Visualization via matplotlib and seaborn.
+- Saves models and plots to organized directories.
+- Designed to handle datasets with categorical data and missing values efficiently.
+
+"""
+            
+
+
 import os
 import random
 
